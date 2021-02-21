@@ -3,12 +3,11 @@
 ## Lab 1
 
 ### App Description
-This is a simple iOS app that shows the user a question on the front of a flashcard. The user can see the answer by clicking on the flashcard.
+This is a simple iOS app that shows the user a question on the front of a flashcard. The user can toggle between the question and answer by clicking on the flashcard. Additionally, the user can choose the answer from the multiple choice options. 
 
-### App Walk-though
-`TODO://` Add the URL to your animated app walk-though `gif` in the image tag below. Make sure the gif actually renders and animates when viewing this README. (☝️ Remove this paragraph after after adding gif)
+### App Walk-through
+<img src="https://i.imgur.com/8nzsYPj.gif" width=200><br>
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
@@ -17,6 +16,6 @@ This is a simple iOS app that shows the user a question on the front of a flashc
 - [x] Build in logic to show the answer side when the card is tapped
 - [x] Push code to GitHub
 ## Optional
-- [ ] Toggle the flashcard between the question side and the answer side
-- [ ] Style the question and answer side of the card to better distinguish between the two sides
-- [ ] Add selectable multiple choice answers beneath the card
+- [x] Toggle the flashcard between the question side and the answer side
+- [x] Style the question and answer side of the card to better distinguish between the two sides
+- [x] Add selectable multiple choice answers beneath the card

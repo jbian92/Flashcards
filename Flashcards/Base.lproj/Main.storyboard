@@ -17,13 +17,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WX0-3E-Z79">
-                                <rect key="frame" x="37" y="360" width="341" height="176"/>
+                                <rect key="frame" x="37" y="253" width="341" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="octopus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8X-1L-xb1">
                                         <rect key="frame" x="0.0" y="0.0" width="341" height="176"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.63738563069999998" green="0.66597316070000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="backgroundColor" red="0.79464200536426954" green="0.75976357556363872" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -42,12 +42,49 @@
                                     <outletCollection property="gestureRecognizers" destination="Ak5-cv-dcM" appends="YES" id="6ws-kE-Hcs"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Up-bd-sbV">
+                                <rect key="frame" x="37" y="473" width="341" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="dolphin">
+                                    <color key="titleColor" red="0.13578590758426021" green="0.10011574113917704" blue="0.27527930699481862" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jgc-gA-kT5" appends="YES" id="PGx-nH-cvV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sDI-6I-iHn">
+                                <rect key="frame" x="37" y="531" width="341" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="octopus">
+                                    <color key="titleColor" red="0.13578590758426021" green="0.10011574113917704" blue="0.27527930699481862" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="flv-C8-7uc" appends="YES" id="9e4-wl-EoB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqK-EQ-NiK">
+                                <rect key="frame" x="37" y="594" width="341" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <state key="normal" title="squid">
+                                    <color key="titleColor" red="0.13578590760000001" green="0.1001157411" blue="0.27527930699999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="RZf-yw-SOc" appends="YES" id="XKo-Pu-AwO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="backLabel" destination="c8X-1L-xb1" id="cVA-Na-Ziu"/>
+                        <outlet property="btnOptionOne" destination="3Up-bd-sbV" id="JJd-ge-R0Y"/>
+                        <outlet property="btnOptionThree" destination="SqK-EQ-NiK" id="r9k-uQ-Ken"/>
+                        <outlet property="btnOptionTwo" destination="sDI-6I-iHn" id="ANN-sD-1Dr"/>
+                        <outlet property="card" destination="WX0-3E-Z79" id="chD-6Y-sQg"/>
                         <outlet property="frontLabel" destination="krN-Cn-W77" id="rvk-8T-8Xk"/>
                     </connections>
                 </viewController>
@@ -55,6 +92,21 @@
                 <tapGestureRecognizer id="Ak5-cv-dcM">
                     <connections>
                         <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="ayr-w0-dH7"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="jgc-gA-kT5">
+                    <connections>
+                        <action selector="didTapOptionOne:" destination="BYZ-38-t0r" id="wNa-79-TzL"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="flv-C8-7uc">
+                    <connections>
+                        <action selector="didTapOptionTwo:" destination="BYZ-38-t0r" id="fgf-iK-4Uf"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="RZf-yw-SOc">
+                    <connections>
+                        <action selector="didTapOptionThree:" destination="BYZ-38-t0r" id="VON-fu-BDp"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
