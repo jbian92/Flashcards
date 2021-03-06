@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Flashcards
 //
-//  Created by Julia Bian on 2/13/21.
+//  Created by Julia Bian.
 //
 
 import UIKit
@@ -54,6 +54,11 @@ class ViewController: UIViewController {
         }
     }
     
+    func updateFlashcard(question: String, answer: String) {
+        frontLabel.text = question
+        backLabel.text = answer
+    }
+    
     // user taps on the first button
     @IBAction func didTapOptionOne(_ sender: Any) {
         btnOptionOne.isHidden = true
@@ -69,5 +74,16 @@ class ViewController: UIViewController {
         btnOptionThree.isHidden = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // desitnation of segue is Navigation Controller
+        let navigationController = segue.destination as! UINavigationController
+        
+        // Navigation Controller only contains a Creation View Controller
+        let creationController = navigationController.topViewController as! CreationViewController
+        
+        // set flashcardsController property to self
+        creationController.flashcardsController = self
+    }
 }
 
