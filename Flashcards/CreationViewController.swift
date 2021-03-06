@@ -29,11 +29,28 @@ class CreationViewController: UIViewController {
         // get text in answer text field
         let answerText = answerTextField.text
         
-        // call the function to update flashcard
-        flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
+        // check if empty
+        if questionText == nil || answerText == nil || questionText!.isEmpty || answerText!.isEmpty {
+            
+            // show error
+            let alert = UIAlertController(title: "Missing Text", message: "You need to enter both a question and an answer.", preferredStyle: .alert)
+            
+            // present the alert
+            present(alert, animated: true)
+            
+            // allow the user to dismiss the alert
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(okAction)
+        }
+        else {
+            // call the function to update flashcard
+            // the '!' tells Swift that we know 100% there is something there for questionText and answerText
+            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
+            
+            // dismiss
+            dismiss(animated: true)
+        }
         
-        // dismiss
-        dismiss(animated: true)
     }
     
     override func viewDidLoad() {
