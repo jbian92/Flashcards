@@ -86,6 +86,34 @@
                                     <segue destination="YR2-GU-Fig" kind="presentation" modalPresentationStyle="fullScreen" id="A8G-4Z-zn9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="278-Xz-eiv">
+                                <rect key="frame" x="336" y="822" width="43" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="0.081667079970000001" green="0.059647023389999998" blue="0.16412321890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mwN-Rl-DXD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8t-kF-CdA">
+                                <rect key="frame" x="37" y="822" width="41" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Prev">
+                                    <color key="titleColor" red="0.13578590760000001" green="0.1001157411" blue="0.27527930699999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <state key="disabled">
+                                    <color key="titleColor" systemColor="opaqueSeparatorColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3H-hf-C0Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -97,6 +125,8 @@
                         <outlet property="btnOptionTwo" destination="sDI-6I-iHn" id="ANN-sD-1Dr"/>
                         <outlet property="card" destination="WX0-3E-Z79" id="chD-6Y-sQg"/>
                         <outlet property="frontLabel" destination="krN-Cn-W77" id="rvk-8T-8Xk"/>
+                        <outlet property="nextButton" destination="278-Xz-eiv" id="lJv-6J-XJC"/>
+                        <outlet property="prevButton" destination="Y8t-kF-CdA" id="0ij-dn-BRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -188,6 +218,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
