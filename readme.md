@@ -6,7 +6,7 @@
 This is a simple iOS app that allows the user to create multiple flashcards, browse through them, and keep them even after they close the app.  
 
 ### App Walk-though
-<img src="https://i.imgur.com/RLZxiTI.gif" width=200><br>
+<img src="https://i.imgur.com/zO8UDSK.mp4" width=200><br>
 
 
 ## Required
