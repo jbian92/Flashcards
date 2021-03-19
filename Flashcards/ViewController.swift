@@ -25,6 +25,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnOptionTwo: UIButton!
     @IBOutlet weak var btnOptionThree: UIButton!
     
+    @IBAction func didTapOnDelete(_ sender: Any) {
+        // show confirmation
+        let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure you want to delete it?", preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.deleteCurrentFlashcard()
+        }
+        
+        present(alert, animated: true)
+        
+        alert.addAction(deleteAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        alert.addAction(cancelAction)
+    }
+    
+    func deleteCurrentFlashcard() {
+        flashcards.remove(at: currentIndex)
+        
+        // special case: last card was deleted
+        if currentIndex > flashcards.count - 1 {
+            currentIndex = flashcards.count - 1
+        }
+        
+        updateNextPrevButtons()
+        updateLabels()
+        saveAllFlashcardsToDisk()
+    }
+    
     // array to hold flashcards
     var flashcards = [Flashcard]()
     
@@ -57,8 +87,18 @@ class ViewController: UIViewController {
         btnOptionThree.layer.borderWidth = 3.0
         btnOptionThree.layer.borderColor = #colorLiteral(red: 0.1426051557, green: 0.09837561101, blue: 0.2860302031, alpha: 1)
         
-        // first flashcard
-        updateFlashcard(question: "Which sea creature has three hearts?", answer: "octopus")
+        // read saved flashcards
+        readSavedFlashcards()
+        
+        // add initial flashcard if needed
+        if flashcards.count == 0 {
+            // first flashcard
+            updateFlashcard(question: "Which sea creature has three hearts?", answer: "octopus")
+        }
+        else {
+            updateLabels()
+            updateNextPrevButtons()
+        }
         
     }
 
@@ -90,6 +130,9 @@ class ViewController: UIViewController {
         
         // update labels after current index is updated
         updateLabels()
+        
+        // save to disk
+        saveAllFlashcardsToDisk()
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {
@@ -151,6 +194,39 @@ class ViewController: UIViewController {
         }
         else {
             prevButton.isEnabled = true
+        }
+    }
+    
+    // save to disk so can retrieve them again when reopen app
+    func saveAllFlashcardsToDisk() {
+        // from flashcard array to dictionary array
+        let dictionaryArray = flashcards.map { (card) -> [String: String] in
+            return ["question": card.question, "answer": card.answer]
+        }
+        
+        // save array on disk using UserDefaults
+        UserDefaults.standard.set(dictionaryArray, forKey: "flashcards")
+        
+        print("Flashcards saved to UserDefaults")
+    }
+    
+    // read previously saved flashcards (if any)
+    func readSavedFlashcards() {
+        /*
+        - read dictionary array from disk (if any)
+        - if let statement allows us to define a constant, in this case dictionaryArray, if and only if there's a value returned by UserDefaults
+        - as? [[String: String]] is needed as we need to tell Swift that we're expecting dictionaryArray to be an array of dictionaries where both the keys and values are Strings
+        */
+        if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]] {
+            
+            // convert an array of dictionaries to an array of Flashcards
+            let savedCards = dictionaryArray.map { dictionary -> Flashcard in
+                // need the ! to tell Swift that we're 100% sure that the dictionary has a value there for "question" and for "answer"
+                return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!)
+            }
+            
+            // put all these cards in our flashcards array
+            flashcards.append(contentsOf: savedCards)
         }
     }
     

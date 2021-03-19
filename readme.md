@@ -1,5 +1,23 @@
 ## Flashcards App
 
+## Lab 3
+
+### App Description
+This is a simple iOS app that allows the user to create multiple flashcards, browse through them, and keep them even after they close the app.  
+
+### App Walk-though
+<img src="https://i.imgur.com/RLZxiTI.gif" width=200><br>
+
+
+## Required
+- [x] User can browse through multiple flashcards
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+## Optional
+- [x] User can delete a flashcard
+- [ ] User can edit existing flashcard
+- [ ] User can store multiple choice questions
+
 ## Lab 2
 
 ### App Description
