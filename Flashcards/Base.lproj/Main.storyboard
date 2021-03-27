@@ -85,39 +85,36 @@
                                     <outletCollection property="gestureRecognizers" destination="RZf-yw-SOc" appends="YES" id="XKo-Pu-AwO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOh-Dt-avO">
-                                <rect key="frame" x="184" y="817" width="46" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOh-Dt-avO">
+                                <rect key="frame" x="175" y="808" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="+">
+                                <state key="normal" image="addButton">
                                     <color key="titleColor" red="0.13578590760000001" green="0.1001157411" blue="0.27527930699999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <segue destination="YR2-GU-Fig" kind="presentation" modalPresentationStyle="fullScreen" id="A8G-4Z-zn9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="278-Xz-eiv">
-                                <rect key="frame" x="336" y="822" width="43" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="278-Xz-eiv">
+                                <rect key="frame" x="326" y="809" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Next">
+                                <state key="normal" image="arrowRight">
                                     <color key="titleColor" red="0.081667079970000001" green="0.059647023389999998" blue="0.16412321890000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <state key="disabled">
+                                <state key="disabled" image="arrowRightDisabled">
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mwN-Rl-DXD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8t-kF-CdA">
-                                <rect key="frame" x="37" y="822" width="41" height="38"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8t-kF-CdA">
+                                <rect key="frame" x="26" y="809" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="Prev">
+                                <state key="normal" image="arrowLeft">
                                     <color key="titleColor" red="0.13578590760000001" green="0.1001157411" blue="0.27527930699999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <state key="disabled">
+                                <state key="disabled" image="arrowLeftDisabled">
                                     <color key="titleColor" systemColor="opaqueSeparatorColor"/>
                                 </state>
                                 <connections>
@@ -228,6 +225,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="addButton" width="64" height="64"/>
+        <image name="arrowLeft" width="64" height="64"/>
+        <image name="arrowLeftDisabled" width="64" height="64"/>
+        <image name="arrowRight" width="64" height="64"/>
+        <image name="arrowRightDisabled" width="64" height="64"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

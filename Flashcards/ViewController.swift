@@ -101,14 +101,76 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    // makes the flashcard pop when the user opens the app
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // start with flashcard invisible and slightly smaller in size
+        card.alpha = 0.0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        // animation with a sense of bounciness
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: []) {
+            self.card.alpha = 1.0
+            self.card.transform = CGAffineTransform.identity
+        }
+
+    }
 
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        if (frontLabel.isHidden == true) {
-            frontLabel.isHidden = false
+        flipFlashcard()
+    }
+    
+    func flipFlashcard() {
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight) {
+            if (self.frontLabel.isHidden == true) {
+                self.frontLabel.isHidden = false
+            }
+            else {
+                self.frontLabel.isHidden = true
+            }
+        }
+    }
+    
+    func animateCardOut(button: String) {
+        UIView.animate(withDuration: 0.3) {
+            if button == "next" {
+                self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+            }
+            else {
+                self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+            }
+        } completion: { finished in
+            // update labels
+            self.updateLabels()
+            
+            // run other animation
+            if button == "next" {
+                self.animateCardIn(button: "next")
+            }
+            else {
+                self.animateCardIn(button: "prev")
+            }
+        }
+    }
+    
+    func animateCardIn(button: String) {
+        if button == "next" {
+            // start card on right side of screen (not animated)
+            card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
         }
         else {
-            frontLabel.isHidden = true
+            // start card on left side of screen
+            card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
         }
+        
+        // animate card going back to its original position in the center
+        UIView.animate(withDuration: 0.3) {
+            // reset transform to have no transform
+            self.card.transform = CGAffineTransform.identity
+        }
+
     }
     
     func updateFlashcard(question: String, answer: String) {
@@ -139,20 +201,19 @@ class ViewController: UIViewController {
         // increase current index
         currentIndex = currentIndex + 1
         
-        // update labels
-        updateLabels()
-        
         // update buttons
         updateNextPrevButtons()
+        
+        animateCardOut(button: "next")
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
         // decrease current index
         currentIndex = currentIndex - 1
-        
-        updateLabels()
-        
+                
         updateNextPrevButtons()
+        
+        animateCardOut(button: "prev")
     }
     
     func updateLabels() {
