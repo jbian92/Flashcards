@@ -5,7 +5,7 @@
 ### App Description
 This is a simple iOS app that allows the user to create multiple flashcards and browse through them with slide animations.
 
-### App Walk-though
+### App Walk-through
 <img src="https://github.com/jbian92/Flashcards/blob/main/ezgif-7-54c5992fd417.gif?raw=true" width=200><br>
 
 
@@ -26,7 +26,7 @@ This is a simple iOS app that allows the user to create multiple flashcards and 
 ### App Description
 This is a simple iOS app that allows the user to create multiple flashcards, browse through them, and keep them even after they close the app.  
 
-### App Walk-though
+### App Walk-through
 <img src="https://github.com/jbian92/Flashcards/blob/main/ezgif-6-73ef63012b59.gif?raw=true" width=200><br> 
 
 
@@ -44,7 +44,7 @@ This is a simple iOS app that allows the user to create multiple flashcards, bro
 ### App Description
 This is a simple iOS app that allows the user to create a flashcard to replace the existing one.
 
-### App Walk-though
+### App Walk-through
 <img src="https://i.imgur.com/zKbX7fC.gif" width=200><br>
 
 
