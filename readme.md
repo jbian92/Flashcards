@@ -6,7 +6,7 @@
 This is a simple iOS app that allows the user to create multiple flashcards and browse through them with slide animations.
 
 ### App Walk-though
-<img src="https://github.com/jbian92/Flashcards/blob/main/ezgif-7-54c5992fd417.gif?raw=true width=200><br>
+<img src="https://github.com/jbian92/Flashcards/blob/main/ezgif-7-54c5992fd417.gif?raw=true" width=200><br>
 
 
 ## Required
